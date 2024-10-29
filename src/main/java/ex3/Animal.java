@@ -76,4 +76,13 @@ public class Animal {
     public void setComportements(String comportements) {
         this.comportements = comportements;
     }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "noms='" + noms + '\'' +
+                ", types='" + types + '\'' +
+                ", comportements='" + comportements + '\'' +
+                '}';
+    }
 }

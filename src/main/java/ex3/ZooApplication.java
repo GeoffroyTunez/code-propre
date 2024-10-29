@@ -24,6 +24,7 @@ public class ZooApplication {
 		zoo.addAnimals(new Animal("Python", "SERPENT", "CARNIVORE"));
 
 		System.out.println(zoo.NombreAnimaux());
+		zoo.afficheListeAnimaux();
 	}
 
 }

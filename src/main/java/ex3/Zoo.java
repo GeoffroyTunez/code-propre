@@ -69,7 +69,7 @@ public class Zoo {
 	 */
 	public void afficheListeAnimaux(){
 		for (int i = 0; i < (animals.size()-1); i++) {
-			System.out.println(this.animals.get(i).getNoms()+" "+this.animals.get(i).getTypes()+" "+this.animals.get(i).getComportements());
+			System.out.println(this.animals.get(i));
 		}
 	}
 
