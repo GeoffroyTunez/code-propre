@@ -16,11 +16,12 @@ public class CompteBancaire {
 	
 	/** Le type vaut soit CC=Compte courant, ou soit LA=Livret A */
 	private String type;
-	
-	/**
+
+
+	/** Constructeur pour CompteBancaire pour créer un compte de type Compte courant
+	 * @param type = CC
 	 * @param solde
 	 * @param decouvert
-	 * @param type
 	 */
 	public CompteBancaire(String type, double solde, double decouvert) {
 		super();
@@ -51,7 +52,9 @@ public class CompteBancaire {
 		this.solde += montant;
 	}
 	
-	/** Ajoute un montant au solde
+	/** Débite un montant au solde
+	 * Si le compte est un CC alors il vérifie s'il ne sera pas en dessous du decouvert autoriser
+	 * Si le compte est un LA alors il vérifie si le montent ne dépasse pas la solde du compte
 	 * @param montant
 	 */
 	public void debiterMontant(double montant){
@@ -66,8 +69,11 @@ public class CompteBancaire {
 			}	
 		}
 	}
-	
-	public void appliquerRemuAnnuelle(){
+
+	/**
+	 * Ajoute au compte "Livre A" la somme de la rémuneration annuelle dont il dispose grace a son taux et a son solde
+ 	 */
+	public void appliquerRemunerationAnnuelle(){
 		if (type.equals("LA")){
 			this.solde = solde + solde*tauxRemuneration/100;
 		}
@@ -80,7 +86,7 @@ public class CompteBancaire {
 		return solde;
 	}
 	
-	/** Setter
+	/** Setter for solde
 	 * @param solde the solde to set
 	 */
 	public void setSolde(double solde) {
@@ -92,7 +98,7 @@ public class CompteBancaire {
 	public double getDecouvert() {
 		return decouvert;
 	}
-	/** Setter
+	/** Setter for decouvert
 	 * @param decouvert the decouvert to set
 	 */
 	public void setDecouvert(double decouvert) {
@@ -104,7 +110,7 @@ public class CompteBancaire {
 	public double getTauxRemuneration() {
 		return tauxRemuneration;
 	}
-	/** Setter
+	/** Setter for tauxRemuneration
 	 * @param tauxRemuneration the tauxRemuneration to set
 	 */
 	public void setTauxRemuneration(double tauxRemuneration) {
@@ -116,7 +122,7 @@ public class CompteBancaire {
 	public String getType() {
 		return type;
 	}
-	/** Setter
+	/** Setter for type
 	 * @param type the type to set
 	 */
 	public void setType(String type) {
