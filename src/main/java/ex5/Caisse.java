@@ -57,7 +57,7 @@ public class Caisse {
 	 * @return
 	 */
 	public boolean checkPoid(int poid){
-		if(poid > this.poidMax || poid < this.poidMin){
+		if(poid < this.poidMax || poid > this.poidMin){
 			return false;
 		}
 		return true;
